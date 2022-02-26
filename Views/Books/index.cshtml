@@ -1,0 +1,40 @@
+﻿@model List<CalebBookstore.Models.BookStore>
+
+<div class="row">
+	<div class="col-md-12">
+	 <h1>Caleb Bookstore ( Project 2 MVC project)</h1>
+	 <h4>Student Id: 52349</h4>
+ </div>
+ </div>
+<div class="row">
+	<div class="col-md-12">
+	 <a asp-action="Create" asp-controller="Books" class="btn btn-success">Create</a>
+ </div>
+</div>
+<div class ="Row">
+	<div class="table">
+	 <table class="table">
+	  <thead>
+	   <tr>
+		<td>Book Title</td>
+		<td>Authour</td>
+		<td>Book Price</td>
+	</tr>
+   </thead>
+   <tbody>
+	   @foreach(var item in Model)
+				{
+					<tr>
+		 <td>@item.Title</td>
+		 <td>@item.Authour</td>
+		 <td>@item.Price</td>
+		 <td>
+	   <a asp-action="Edit" asp-controller="Books" asp-route-id="@item.Id">Edit</a>
+	   <a asp-action="Delete" asp-controller="Books" asp-route-id="@item.Id">Delete</a>
+   </td>
+	 </tr>
+				}
+   </tbody>
+  </table>
+ </div>
+</div> 
